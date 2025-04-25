@@ -1,7 +1,8 @@
-const signup = ()=>{
-
-    return(
-        <div>heelo signup</div>
-    )
+import Signupcomponent from "../components/Signupcomponent";
+export default function SignupPage() {
+  return (
+    <div>
+        <Signupcomponent />
+    </div>
+  );
 }
-export default signup

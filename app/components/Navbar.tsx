@@ -5,7 +5,7 @@ const Navbar= ()=>{
     const lists =[{id:1,value:"Home" },{id:2,value:"Service"},{id:3,value:"Agent"},{id:4,value:"Contact"}];
     return(
         <nav className="flex  justify-between bg-[#FEF7F2] mx-7   sticky p-3">
-            <div >logo</div>,
+            <div> <Link href={"/"} >logo </Link>  </div>,
             <ul className="space-x-8  text-[#2B1B12] flex    ">
                {lists.map(list =>  <li  className="font-semibold" key={list.id}>{  list.value}</li>)}
                
