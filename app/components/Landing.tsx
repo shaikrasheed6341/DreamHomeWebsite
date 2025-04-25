@@ -4,8 +4,8 @@ import Landingimage from "../../public/Landingpage.png";
 const Landing = () => {
   return (
     <div className="min-h-screen bg-[#FEF7F2] flex items-center justify-center">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-15 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
           {/* Text Section */}
           <div className="p-6 sm:p-10 text-center md:text-left">
             <h1 className="font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#2B1B12] leading-tight mb-6">
@@ -26,9 +26,9 @@ const Landing = () => {
             <Image
               src={Landingimage}
               alt="Landing page"
-              width={500}
-              height={500}
-              className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg object-cover"
+              width={700}
+              height={400}
+              className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg  object-cover"
               priority
             />
           </div>
