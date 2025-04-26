@@ -49,7 +49,7 @@ export const SearchComponent = () => {
                             <div className="flex items-center">
                                 <button
                                     type="button"
-                                    className="w-full bg-[#2B1B12] text-white px-5 py-3 rounded-2xl text-sm sm:text-base font-semibold hover:bg-[#ffffff] transition-colors"
+                                    className="w-full bg-[#2B1B12] text-white px-5 py-3 rounded-2xl text-sm sm:text-base font-semibold "
                                 >
                                     Search
                                 </button>
