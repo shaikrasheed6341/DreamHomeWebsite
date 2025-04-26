@@ -3,6 +3,7 @@ import { SearchComponent } from "./components/searchcomponetn/Searchcomponent"
 import Cardcomponent from "./components/Card/Cardcomponent"
 import { Quastion } from "./components/Quastion"
 import Supportcards from "./Supportcards/page"
+import InfiniteMovingCardsDemo from "./ReviewCard/page"
 export default function Home() {
   return (
   
@@ -13,6 +14,7 @@ export default function Home() {
  <Cardcomponent />
  <Quastion />
  <Supportcards />
+ <InfiniteMovingCardsDemo />
 </>
 
 )
