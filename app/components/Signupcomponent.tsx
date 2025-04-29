@@ -1,27 +1,30 @@
 "use client";
 import React from "react";
-import Image from "next/image";
 import { Label } from "./label";
 import { Input } from "./input";
-import Landingpage from "../../public/Landingpage.png"
 import { cn } from "../lib/utils";
 import {
   IconBrandGithub,
   IconBrandGoogle,
 } from "@tabler/icons-react";
+import axios from "axios";
 
-export default function Signupcomponent() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+export  default function Signupcomponent() {
+
+  const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form submitted");
+    const result= await axios.post("/api/auth/signup");
+    console.log(result)
   };
+     
+    
   return (
     <div className="flex justify-center bg-[#ffffff] ">
       <div className="bg-[#FEF7F2]  rounded-2xl text-[#2B1B12]  py-15 h-max mr-4 w-1/3 mt-4  ">
         <div className="text-center text-4xl font-bold text-[#2B1B12] p-5">
           <h1 >Dream Home</h1>
         </div>
-        <Image src={Landingpage} alt="landingoageimage" width={900} className="mb-6 " />
+        {/* <Image src={Landingpage} alt="landingoageimage" width={900} className="mb-6 " /> */}
       </div>
       <div className="shadow-input  mt-4 rounded-none  p-4 md:rounded-2xl md:p-8 bg-[#FEF7F2]">
         <h2 className="text-xl font-bold text-[#2B1B12] ">
@@ -44,8 +47,8 @@ export default function Signupcomponent() {
             </LabelInputContainer>
           </div>
           <LabelInputContainer className="mb-4">
-            <Label htmlFor="email">Email Address</Label>
-            <Input id="email" placeholder="projectmayhem@fc.com" type="email" />
+            <Label htmlFor="gmail">Email Address</Label>
+            <Input id="gmail" placeholder="projectmayhem@fc.com" type="email" />
           </LabelInputContainer>
           <LabelInputContainer className="mb-4">
             <Label htmlFor="password">Password</Label>
