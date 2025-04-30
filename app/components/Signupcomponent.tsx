@@ -79,7 +79,7 @@ export default function Signupcomponent() {
         </div>
       </div>
       <div className="shadow-input mt-4 rounded-none p-4 md:rounded-2xl md:p-8 bg-[#FEF7F2]">
-        <h2 className="text-xl font-bold text-[#2B1B12]">Welcome to Aceternity</h2>
+        <h2 className="text-xl font-bold text-[#2B1B12]">Welcome to Dream Home</h2>
         <p className="mt-2 max-w-sm text-sm text-[#2B1B12]">
           Create an account to get started.
         </p>
