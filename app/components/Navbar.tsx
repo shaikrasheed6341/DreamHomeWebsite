@@ -72,6 +72,9 @@ const Navbar = () => {
           <button className="text-white px-5 py-2 rounded-xl text-sm bg-[#2B1B12] hover:bg-zinc-900 transition-colors">
             <Link href="/signup">Signup</Link>
           </button>
+          <button className="text-white px-5 py-2 rounded-xl  text-sm bg-[#2B1B12] hover:bg-zinc-900 transition-colors">
+            <Link href="/login">Login</Link>
+          </button>
         </div>
 
         <div
@@ -80,9 +83,14 @@ const Navbar = () => {
           } md:hidden flex flex-col space-y-4 mt-4 p-4 bg-[#FEF7F2]`}
         >
           <FaSearch className="text-xl text-[#2B1B12] cursor-pointer hover:text-[#F28C38]" />
+          <div>
           <button className="text-white px-5 py-2 rounded-xl text-sm bg-[#2B1B12] hover:bg-[#F28C38] transition-colors w-fit">
             <Link href="/signup">Signup</Link>
           </button>
+          <button className="text-white px-5 py-2 rounded-xl text-sm bg-[#2B1B12] hover:bg-[#F28C38] transition-colors w-fit">
+            <Link href="/login">Login</Link>
+          </button>
+          </div>
         </div>
       </div>
     </nav>
