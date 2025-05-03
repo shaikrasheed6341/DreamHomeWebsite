@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
     const token = sign(
       { userId: finduser.id, email: finduser.email },
       jwtSecret,
-      { expiresIn: "2h" }
+      { expiresIn: "7d" }
     );
 
     const response = NextResponse.json({ message: "You successfully logged in" }, { status: 200 });
