@@ -3,9 +3,10 @@ import React, { useEffect, useState } from "react";
 import { Label } from "./label";
 import { Input } from "./input";
 import { cn } from "../lib/utils";
-import { IconBrandGithub, IconBrandGoogle } from "@tabler/icons-react";
 import axios from "axios";
 import { useRouter } from "next/navigation"
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Signupcomponent() {
   const router = useRouter();
@@ -41,14 +42,14 @@ export default function Signupcomponent() {
         email: formData.email,
         password: formData.password,
       });
-      
+
       console.log(response);
-        
-      
+
+
       setMessage({ type: "success", text: "Signup successful!" });
       setFormData({ firstName: "", lastName: "", email: "", password: "" });
-      
-    } catch (error:unknown) {
+
+    } catch (error: unknown) {
       setMessage({
         type: "error",
         text: error.response?.data?.error || "Signup failed. Please try again.",
@@ -59,23 +60,23 @@ export default function Signupcomponent() {
     }
   };
 
-  const handleOAuth = (provider: "github" | "google") => {
-    window.location.href = `/api/auth/${provider}`; // Adjust based on your OAuth setup
-  };
 
-  useEffect(()=>{
-       if(message?.type === "success"){
-        router.push("/")
-       }
-  },[message,router])
 
-  
+  useEffect(() => {
+    if (message?.type === "success") {
+      router.push("/Login")
+    }
+  }, [message, router])
+
+
 
   return (
     <div className="flex justify-center bg-[#ffffff]">
       <div className="bg-[#FEF7F2] rounded-2xl text-[#2B1B12] py-15 h-max mr-4 w-1/3 mt-4">
-        <div className="text-center text-4xl font-bold text-[#2B1B12] p-5">
+        <div className="text-center text-4xl font-bold text-[#2B1B12] p-5 mb-3">
           <h1>Dream Home</h1>
+          <div className="div object-cover pb-2"><Image src={"https://zxetkysuahfjolouwpgh.supabase.co/storage/v1/object/public/homerent/bulding%20image/hero%20image%201.png"   } width={600} height={100}  alt="bulding"  /></div>
+
         </div>
       </div>
       <div className="shadow-input mt-4 rounded-none p-4 md:rounded-2xl md:p-8 bg-[#FEF7F2]">
@@ -86,9 +87,8 @@ export default function Signupcomponent() {
 
         {message && (
           <div
-            className={`mb-4 p-2 text-sm ${
-              message.type === "success" ? "text-green-600" : "text-red-600"
-            }`}
+            className={`mb-4 p-2 text-sm ${message.type === "success" ? "text-green-600" : "text-red-600"
+              }`}
           >
             {message.text}
           </div>
@@ -152,26 +152,11 @@ export default function Signupcomponent() {
           </button>
 
           <div className="my-8 h-[1px] w-full bg-[#2B1B12]" />
+          <div>
+            <Link href="/login">
+              <button className="bg-[#2B1B12] text-white px-44 py-2 rounded-md">Login</button>
+            </Link>
 
-          <div className="flex flex-col space-y-4">
-            <button
-              className="group/btn shadow-input relative flex h-10 w-full items-center justify-start space-x-2 rounded-md px-4 font-medium text-black bg-[#2B1B12]"
-              type="button"
-              onClick={() => handleOAuth("github")}
-            >
-              <IconBrandGithub className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
-              <span className="text-sm text-neutral-700 dark:text-neutral-300">GitHub</span>
-              <BottomGradient />
-            </button>
-            <button
-              className="group/btn shadow-input relative flex h-10 w-full items-center justify-start space-x-2 rounded-md bg-[#2B1B12] px-4 font-medium text-black"
-              type="button"
-              onClick={() => handleOAuth("google")}
-            >
-              <IconBrandGoogle className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
-              <span className="text-sm text-neutral-700 dark:text-neutral-300">Google</span>
-              <BottomGradient />
-            </button>
           </div>
         </form>
       </div>

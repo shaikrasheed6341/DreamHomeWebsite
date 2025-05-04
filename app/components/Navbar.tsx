@@ -3,8 +3,7 @@
 import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import Link from "next/link";
-import { FaSearch } from "react-icons/fa";
-
+import Image from "next/image";
 const Navbar = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -33,7 +32,11 @@ const Navbar = () => {
   return (
     <nav className="bg-[#FEF7F2] p-3 shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <Link href="/" className="text-[#2B1B12] font-bold text-xl">Logo</Link>
+        <Link href="/" className="text-[#2B1B12] font-bold text-xl">
+        <div className=" full rounded-full">
+         <Image src={"https://zxetkysuahfjolouwpgh.supabase.co/storage/v1/object/public/homerent/logo/4318759.jpg"} alt="logo" width={100} height={50} className="rounded-full w-12 ml-5" /> 
+         </div>
+         </Link>
 
         {/* Hamburger */}
         <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
@@ -53,15 +56,12 @@ const Navbar = () => {
 
         {/* Desktop auth buttons */}
         <div className="hidden md:flex space-x-4">
-          <FaSearch className="text-[#2B1B12]" />
           {!isAuthenticated ? (
             <>
               <Link href="/signup">
-                <button className="bg-[#2B1B12] text-white px-4 py-2 rounded-md">Signup</button>
+                <button className="bg-[#2B1B12] text-white px-4 py-1.5 rounded-md">Signup</button>
               </Link>
-              <Link href="/login">
-                <button className="bg-[#2B1B12] text-white px-4 py-2 rounded-md">Login</button>
-              </Link>
+             
             </>
           ) : (
             <button onClick={handleLogout} className="bg-red-600 text-white px-4 py-2 rounded-md">Logout</button>
@@ -79,7 +79,6 @@ const Navbar = () => {
           {!isAuthenticated ? (
             <>
               <Link href="/signup"><button className="w-full bg-[#2B1B12] text-white py-2 rounded-md">Signup</button></Link>
-              <Link href="/login"><button className="w-full bg-[#2B1B12] text-white py-2 rounded-md">Login</button></Link>
             </>
           ) : (
             <button onClick={handleLogout} className="w-full bg-red-600 text-white py-2 rounded-md">Logout</button>
