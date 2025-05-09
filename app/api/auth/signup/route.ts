@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 // import { PrismaClient } from "@prisma/client";
 
 import { hash } from "bcrypt";
-import { db } from "@/app/lib/db";
+import { db } from "../../../lib/db";
 // const prisma = new PrismaClient();
 
 export async function POST(request: NextRequest) {
@@ -40,7 +40,5 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error("Signup error:", error);
     return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
-  } finally {
-    await db.$disconnect();
   }
 }

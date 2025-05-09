@@ -13,7 +13,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Find user in the database
-    const finduser = await db.user.findFirst({
+    const finduser = await db().user.findFirst({
       where: { email },
     });
 
