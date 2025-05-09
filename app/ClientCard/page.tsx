@@ -1,8 +1,9 @@
- import { SudmitCard } from "../components/SudmitCard.tsx/SudmitCard";
- export   const  ClientCard = ()=>{
+import { SubmitCard } from "../components/SudmitCard/SudmitCard"
+export   const  ClientCard = ()=>{
     return(
         <div>
-            <SudmitCard />
+            <SubmitCard />
+            
         </div>
     )
 }
