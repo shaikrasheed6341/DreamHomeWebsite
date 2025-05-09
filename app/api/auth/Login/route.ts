@@ -13,7 +13,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Find user in the database
-    const finduser = await db().user.findFirst({
+    const finduser = await db.user.findFirst({
       where: { email },
     });
 
@@ -60,8 +60,6 @@ export async function GET() {
   if (!jwtSecret) {
     throw new Error("JWT_SECRET is not defined in environment variables");
   }
-
-  console.log("JWT_SECRET:", jwtSecret); // For debugging only; remove in production
 
   return NextResponse.json({ message: "I am login route, it is working" });
 }

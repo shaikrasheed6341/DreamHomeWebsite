@@ -1,5 +1,5 @@
 import Logincomponent from "../components/Logincomponent"
-export default function Login(){
+export default function Loginform(){
     return(
      <Logincomponent /> 
     )

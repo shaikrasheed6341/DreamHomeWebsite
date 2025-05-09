@@ -34,7 +34,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <Link href="/" className="text-[#2B1B12] font-bold text-xl">
         <div className=" full rounded-full">
-         <Image src={"https://zxetkysuahfjolouwpgh.supabase.co/storage/v1/object/public/homerent/logo/4318759.jpg"} alt="logo" width={100} height={50} className="rounded-full w-12 ml-5" /> 
+         <Image src={"https://ecbmbqcpywczvkskaxyc.supabase.co/storage/v1/object/public/dreamhome//4318759.jpg"} alt="logo" width={100} height={50} className="rounded-full w-12 ml-5" /> 
          </div>
          </Link>
 

@@ -2,6 +2,7 @@
 import axios from "axios";
 import { useState } from "react";
 import {useRouter} from "next/navigation";
+import { toast } from "react-toastify";
 export default function Logincomponent() {
   const Router  = useRouter();
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -14,11 +15,12 @@ export default function Logincomponent() {
     e.preventDefault();
     try {
       const response = await axios.post("/api/auth/Login", formData);
+      toast.success(response.data.message)
       console.log("Login success:", response.data);
-      if(response.status === 200){
       Router.push('/')
-      }
+
     } catch (error) {
+      toast.error("Login Failed plz check the datails")
       console.error("Login failed:", error);
     }
   };

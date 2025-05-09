@@ -1,5 +1,7 @@
 import { FaSquareXTwitter, FaSquareGithub } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
+import Image from "next/image";
+
 import Link from "next/link";
 
 export const Footer = () => {
@@ -7,8 +9,12 @@ export const Footer = () => {
         <footer>
             <div className="bg-[#DDC7BB] flex flex-col md:flex-row p-6 md:p-10 justify-center items-center md:items-start space-y-8 md:space-y-0 md:space-x-10">
                 <div className="text-center md:text-left  ">
-                    
-                    <div className="font-bold text-3xl md:text-4xl text-[#2B1B12]">logo</div>
+
+                    <Link href="/" className="text-[#2B1B12] font-bold text-xl">
+                        <div className=" ">
+                            <Image src={"https://ecbmbqcpywczvkskaxyc.supabase.co/storage/v1/object/public/dreamhome//4318759.jpg"} alt="logo" width={100} height={50} className=" w-16 ml-5" />
+                        </div>
+                    </Link>
                     <div className="text-[#2B1B12] font-sans w-60 md:w-64 my-2 text-sm md:text-base ">
                         Bringing you closer to your dream home, one click at a time.
                     </div>

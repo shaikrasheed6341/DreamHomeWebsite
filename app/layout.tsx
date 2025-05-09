@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Navbar from "./components/Navbar";
 import { Footer } from "./components/Footer/Footer";
 import { Geist, Geist_Mono } from "next/font/google";
+import {ToastContainer,Bounce} from "react-toastify"
 import "./globals.css";
 
 const geistSans = Geist({
@@ -32,6 +33,19 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <ToastContainer
+position="top-center"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick={false}
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="light"
+transition={Bounce}
+/>
       </body>
     </html>
   );

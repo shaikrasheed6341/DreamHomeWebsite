@@ -1,12 +1,13 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Label } from "./label";
 import { Input } from "./input";
 import { cn } from "../lib/utils";
 import axios from "axios";
-import { useRouter } from "next/navigation"
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
+import { toast } from "react-toastify";
 
 export default function Signupcomponent() {
   const router = useRouter();
@@ -17,7 +18,6 @@ export default function Signupcomponent() {
     password: "",
   });
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
@@ -27,72 +27,60 @@ export default function Signupcomponent() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    setMessage(null);
 
-    if (!formData.firstName || !formData.lastName || !formData.email || !formData.password) {
-      setMessage({ type: "error", text: "All fields are required." });
+    const { firstName, lastName, email, password } = formData;
+
+    if (!firstName || !lastName || !email || !password) {
+      toast.error("All fields are required.");
       setLoading(false);
       return;
     }
 
     try {
-      const response = await axios.post("/api/auth/signup", {
-        firstname: formData.firstName,
-        lastname: formData.lastName,
-        email: formData.email,
-        password: formData.password,
+      const response = await axios.post("http://localhost:3000/api/auth/signup", {
+        firstname: firstName,
+        lastname: lastName,
+        email,
+        password,
       });
 
-      console.log(response);
+      toast.success(response.data.message || "Successfully signed up!");
 
-
-      setMessage({ type: "success", text: "Signup successful!" });
       setFormData({ firstName: "", lastName: "", email: "", password: "" });
 
-    } catch (error: unknown) {
-      setMessage({
-        type: "error",
-        text: error.response?.data?.error || "Signup failed. Please try again.",
-      });
+      // Redirect to login after a short delay
+      setTimeout(() => {
+        router.push("/Loginform");
+      }, 1500);
+    } catch (error) {
+      toast.error("Something went wrong. Please try again.");
       console.error("Signup error:", error);
     } finally {
       setLoading(false);
     }
   };
 
-
-
-  useEffect(() => {
-    if (message?.type === "success") {
-      router.push("/Login")
-    }
-  }, [message, router])
-
-
-
   return (
     <div className="flex justify-center bg-[#ffffff]">
       <div className="bg-[#FEF7F2] rounded-2xl text-[#2B1B12] py-15 h-max mr-4 w-1/3 mt-4">
         <div className="text-center text-4xl font-bold text-[#2B1B12] p-5 mb-3">
           <h1>Dream Home</h1>
-          <div className="div object-cover pb-2"><Image src={"https://zxetkysuahfjolouwpgh.supabase.co/storage/v1/object/public/homerent/bulding%20image/hero%20image%201.png"   } width={600} height={100}  alt="bulding"  /></div>
-
+          <div className="object-cover pb-2">
+            <Image
+              src="https://ecbmbqcpywczvkskaxyc.supabase.co/storage/v1/object/public/dreamhome//4318759.jpg"
+              width={600}
+              height={100}
+              alt="building"
+            />
+          </div>
         </div>
       </div>
+
       <div className="shadow-input mt-4 rounded-none p-4 md:rounded-2xl md:p-8 bg-[#FEF7F2]">
         <h2 className="text-xl font-bold text-[#2B1B12]">Welcome to Dream Home</h2>
         <p className="mt-2 max-w-sm text-sm text-[#2B1B12]">
           Create an account to get started.
         </p>
-
-        {message && (
-          <div
-            className={`mb-4 p-2 text-sm ${message.type === "success" ? "text-green-600" : "text-red-600"
-              }`}
-          >
-            {message.text}
-          </div>
-        )}
 
         <form className="my-8" onSubmit={handleSubmit}>
           <div className="mb-4 flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-2">
@@ -153,10 +141,9 @@ export default function Signupcomponent() {
 
           <div className="my-8 h-[1px] w-full bg-[#2B1B12]" />
           <div>
-            <Link href="/login">
+            <Link href="/Loginform">
               <button className="bg-[#2B1B12] text-white px-44 py-2 rounded-md">Login</button>
             </Link>
-
           </div>
         </form>
       </div>
