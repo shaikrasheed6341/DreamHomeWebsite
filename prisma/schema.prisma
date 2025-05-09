@@ -6,7 +6,6 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
-  directUrl = env("DATABASE_URL")
 }
 
 model User {
@@ -22,7 +21,8 @@ model User {
 model Customer {
   id          Int      @id @default(autoincrement())
   username    String
-  email       String   @unique
+  email       String   
   phonenumber String
   createdAt   DateTime @default(now())
 }
+

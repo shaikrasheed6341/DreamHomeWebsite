@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 // import { PrismaClient } from "@prisma/client";
-
 import { hash } from "bcrypt";
 import { db } from "../../../lib/db";
 // const prisma = new PrismaClient();

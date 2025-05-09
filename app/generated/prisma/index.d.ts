@@ -3247,14 +3247,14 @@ export namespace Prisma {
 
   export type CustomerWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    email?: string
     AND?: CustomerWhereInput | CustomerWhereInput[]
     OR?: CustomerWhereInput[]
     NOT?: CustomerWhereInput | CustomerWhereInput[]
     username?: StringFilter<"Customer"> | string
+    email?: StringFilter<"Customer"> | string
     phonenumber?: StringFilter<"Customer"> | string
     createdAt?: DateTimeFilter<"Customer"> | Date | string
-  }, "id" | "email">
+  }, "id">
 
   export type CustomerOrderByWithAggregationInput = {
     id?: SortOrder
