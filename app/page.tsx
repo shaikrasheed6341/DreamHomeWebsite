@@ -6,6 +6,7 @@ import Supportcards from "./Supportcards/page"
 import InfiniteMovingCardsDemo from "./ReviewCard/page"
 import { Quations } from "./components/Quations"
 import { ClientCard } from "./ClientCard/page";
+import Cartcomponent from "./components/Cartcomponent/Cartcomponet"
 export default function Home() {
   return (
   
@@ -14,6 +15,7 @@ export default function Home() {
  
  <SearchComponent />
  <Cardcomponent />
+ <Cartcomponent />
  <Quastion />
  <Supportcards />
  <InfiniteMovingCardsDemo />

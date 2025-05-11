@@ -138,6 +138,14 @@ exports.Prisma.CustomerScalarFieldEnum = {
   createdAt: 'createdAt'
 };
 
+exports.Prisma.CartScalarFieldEnum = {
+  id: 'id',
+  place: 'place',
+  rooms: 'rooms',
+  squrefeet: 'squrefeet',
+  price: 'price'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -148,10 +156,16 @@ exports.Prisma.QueryMode = {
   insensitive: 'insensitive'
 };
 
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
+};
+
 
 exports.Prisma.ModelName = {
   User: 'User',
-  Customer: 'Customer'
+  Customer: 'Customer',
+  Cart: 'Cart'
 };
 
 /**

@@ -6,7 +6,7 @@ import { FaSackDollar } from "react-icons/fa6";
 
 export const SearchComponent = () => {
     return (
-        <div className="bg-[#FEF7F2]">
+        <div className="bg-[#FEF7F2] p-2">
             <div className="  mx-20  ">
                 <div className="bg-[#DDC7BB] rounded-3xl py-6">
                     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">

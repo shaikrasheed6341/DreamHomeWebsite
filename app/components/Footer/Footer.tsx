@@ -15,7 +15,7 @@ export const Footer = () => {
                             <Image src={"https://ecbmbqcpywczvkskaxyc.supabase.co/storage/v1/object/public/dreamhome//4318759.jpg"} alt="logo" width={100} height={50} className=" w-16 ml-5" />
                         </div>
                     </Link>
-                    <div className="text-[#2B1B12] font-sans w-60 md:w-64 my-2 text-sm md:text-base ">
+                    <div className="text-[#2B1B12] mx-4 font-sans font-semibold w-60 md:w-64 my-2 text-sm md:text-base ">
                         Bringing you closer to your dream home, one click at a time.
                     </div>
                 </div>

@@ -6,7 +6,7 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'ecbmbqcpywczvkskaxyc.supabase.co',
         port: '',
-        pathname: '/storage/v1/object/public/dreamhome/**', // Specific bucket path
+        pathname: '/storage/v1/object/public/dreamhome/**',
       },
     ],
   },

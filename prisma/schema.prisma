@@ -26,3 +26,11 @@ model Customer {
   createdAt   DateTime @default(now())
 }
 
+model Cart{
+  id Int @id @default(autoincrement())
+  place String
+  rooms String
+  squrefeet String
+  price String?
+
+}

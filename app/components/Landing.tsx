@@ -3,8 +3,9 @@ import Landingimage from "../../public/Landingpage.png";
 
 const Landing = () => {
   return (
-    <div className="min-h-screen bg-[#FEF7F2]  flex items-center justify-center py-12 md:py-16 lg:py-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <div className="min-h-screen bg-[#FEF7F2] flex items-center justify-center relative py-4 md:py-6 lg:py-0">
+
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Text Section */}
           <div className="p-6 sm:p-8 lg:p-10 text-center lg:text-left">
