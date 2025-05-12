@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "cross-env NODE_ENV=production next build",
+    "build": "npx prisma generate && cross-env NODE_ENV=production next build ",
     "start": "npx prisma generate && npx prisma db push && next build",
     "lint": "next lint"
   },
