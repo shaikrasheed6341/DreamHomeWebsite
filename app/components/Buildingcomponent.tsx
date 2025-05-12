@@ -4,10 +4,11 @@ interface Building {
   place: string;
   rooms: string;
   squarefeet: string;
-  price?: string | null; // Optional to support API
+  price?: string | null;
+  proparty?:string // Optional to support API
 }
 
-export default function BuildingComponent({ place, rooms, squarefeet, price }: Building) {
+export default function BuildingComponent({ place, rooms, squarefeet, price ,proparty}: Building) {
 
 
   return (
@@ -25,7 +26,12 @@ export default function BuildingComponent({ place, rooms, squarefeet, price }: B
           <span className="text-gray-600 text-sm font-bold">Area:</span>
           <span className="text-gray-800 font-semibold text-md">{squarefeet}</span>
         </div>
+
       </div>
+        <div className=" items-center space-x-2">
+          <span className="text-gray-600 text-sm font-bold">Propartiy:</span>
+          <span className="text-gray-800 font-semibold text-md">{proparty}</span>
+        </div>
       {price !== undefined && (
         <div className="mt-3 flex items-center space-x-2">
           <span className="text-gray-600 text-sm">Price:</span>

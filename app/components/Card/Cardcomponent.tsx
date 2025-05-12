@@ -1,6 +1,5 @@
 import React from 'react';
 import Image from 'next/image';
- // Assumes card.png is in public/card.png
 
 const Cardcomponent = () => {
   return (
@@ -9,7 +8,7 @@ const Cardcomponent = () => {
         {/* Image Section */}
         <div className="flex justify-center">
           <Image
-            src={"https://ecbmbqcpywczvkskaxyc.supabase.co/storage/v1/object/public/dreamhome//Mask%20group@2x.png"}
+            src="https://ecbmbqcpywczvkskaxyc.supabase.co/storage/v1/object/public/dreamhome/Mask%20group@2x.png"
             alt="Dream home illustration"
             width={600}
             height={400}
@@ -29,18 +28,18 @@ const Cardcomponent = () => {
           </p>
 
           {/* Stats Section */}
-          <div className="grid gap-6  sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 text-center">
+          <div className="grid grid-cols-3 gap-4 text-center">
             <div>
-              <p className="text-3xl grid-cols-1 sm:text-4xl font-bold text-[#2B1B12]">8K+</p>
-              <p className="text-lg underline text-[#2B1B12]">Houses Available</p>
+              <p className="text-3xl sm:text-4xl font-bold text-[#2B1B12]">8K+</p>
+              <p className="text-base sm:text-lg underline text-[#2B1B12]">Houses Available</p>
             </div>
             <div>
-              <p className="text-3xl grid-cols-2 sm:text-4xl font-bold text-[#2B1B12]">8K+</p>
-              <p className="text-lg underline text-[#2B1B12]">Houses Sold</p>
+              <p className="text-3xl sm:text-4xl font-bold text-[#2B1B12]">8K+</p>
+              <p className="text-base sm:text-lg underline text-[#2B1B12]">Houses Sold</p>
             </div>
             <div>
-              <p className="text-3xl grid-cols-3 sm:text-4xl font-bold text-[#2B1B12]">8K+</p>
-              <p className="text-lg underline text-[#2B1B12]">Trusted Agents</p>
+              <p className="text-3xl sm:text-4xl font-bold text-[#2B1B12]">8K+</p>
+              <p className="text-base sm:text-lg underline text-[#2B1B12]">Trusted Agents</p>
             </div>
           </div>
         </div>

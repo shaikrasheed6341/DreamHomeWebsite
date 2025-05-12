@@ -1,32 +1,35 @@
-'use client';
+"use client"
 
 import axios from 'axios';
 import React, { useState } from 'react';
 import { FaUser, FaPhoneAlt } from 'react-icons/fa';
 import { MdOutgoingMail } from 'react-icons/md';
 import {  toast } from 'react-toastify';
+
+
 import 'react-toastify/dist/ReactToastify.css';
 
-export const SubmitCard = () => {
+export   const SubmitCard = () => {
+
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [phonenumber, setPhonenumber] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-
+ 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
-
+      
     try {
       // Client-side validation
       
 
-      const response = await axios.post('http://localhost:3000/api/custmor', {
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/custmor`, {
         username,
         email,
         phonenumber,
       });
-
+      
       toast.success(response.data.message || 'Form submitted successfully!', {
         position: 'top-right',
         autoClose: 3000,

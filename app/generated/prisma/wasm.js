@@ -143,7 +143,17 @@ exports.Prisma.CartScalarFieldEnum = {
   place: 'place',
   rooms: 'rooms',
   squrefeet: 'squrefeet',
+  proparty: 'proparty',
   price: 'price'
+};
+
+exports.Prisma.ContactScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  email: 'email',
+  phonenumber: 'phonenumber',
+  location: 'location',
+  createAt: 'createAt'
 };
 
 exports.Prisma.SortOrder = {
@@ -165,7 +175,8 @@ exports.Prisma.NullsOrder = {
 exports.Prisma.ModelName = {
   User: 'User',
   Customer: 'Customer',
-  Cart: 'Cart'
+  Cart: 'Cart',
+  Contact: 'Contact'
 };
 
 /**

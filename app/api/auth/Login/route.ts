@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/app/lib/db";
 import bcrypt from "bcrypt";
 import { sign } from "jsonwebtoken";
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();

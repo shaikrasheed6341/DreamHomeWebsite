@@ -17,7 +17,7 @@ try {
   }
 
   // Store the instance for reuse in development
-  if (process.env.NODE_ENV !== 'development') {
+  if (process.env.NODE_ENV !== 'production') {
     globalForPrisma.prisma = db;
   }
 } catch (error) {

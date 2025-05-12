@@ -1,5 +1,6 @@
+
 import { SubmitCard } from "../components/SudmitCard/SudmitCard"
-export   const  ClientCard = ()=>{
+export default function  ClientCard (){
     return(
         <div>
             <SubmitCard />

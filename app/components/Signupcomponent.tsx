@@ -61,16 +61,19 @@ export default function Signupcomponent() {
   };
 
   return (
-    <div className="flex justify-center bg-[#ffffff]">
-      <div className="bg-[#FEF7F2] rounded-2xl text-[#2B1B12] py-15 h-max mr-4 w-1/3 mt-4">
-        <div className="text-center text-4xl font-bold text-[#2B1B12] p-5 mb-3">
-          <h1>Dream Home</h1>
-          <div className="object-cover pb-2">
+    <div className="flex justify-center bg-[#ffffff] m-3">
+      <div className="bg-[#FEF7F2] rounded-2xl text-[#2B1B12] py-6 h-max mr-4 w-1/3 mt-4">
+        <div className="text-center text-4xl font-bold  text-[#2B1B12] p-5 mb-3">
+         
+          <h1 className="mb-2">Dream Home</h1>
+  
+          <div className="object-cover pb-2 rounded-full">
             <Image
               src="https://ecbmbqcpywczvkskaxyc.supabase.co/storage/v1/object/public/dreamhome//4318759.jpg"
-              width={600}
+              width={400}
               height={100}
               alt="building"
+              className="rounded-full p-3 my-6 object-cover"
             />
           </div>
         </div>
