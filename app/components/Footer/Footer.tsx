@@ -45,7 +45,7 @@ export const Footer = () => {
             <li className="flex items-center gap-3 group">
               <FaLinkedin className="text-xl transition-colors duration-300 group-hover:text-[#4A372A]" />
               <Link
-                href="https://www.linkedin.com/in/shaik-rasheed" // Replace with correct LinkedIn URL
+                href="https://www.linkedin.com/in/shaik-rasheed-4b76a9276/" // Replace with correct LinkedIn URL
                 target="_blank"
                 className="text-sm md:text-base font-semibold transition-colors duration-300 group-hover:text-[#4A372A] group-hover:underline"
                 aria-label="Connect with us on LinkedIn"
