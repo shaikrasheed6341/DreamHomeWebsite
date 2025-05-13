@@ -30,7 +30,7 @@ export   const SubmitCard = () => {
         phonenumber,
       });
       
-      toast.success(response.data.message || 'Form submitted successfully!', {
+      toast.success(response.data.message || 'your form successfully submitted!', {
         position: 'top-right',
         autoClose: 3000,
       });
