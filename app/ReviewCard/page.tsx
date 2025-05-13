@@ -6,8 +6,8 @@ import { InfiniteMovingCards } from "../components/ReviewCard/ReviewCard";
 export default function InfiniteMovingCardsDemo() {
   return (
     <div>
-    <div className="h-[25rem] rounded-md flex flex-col antialiased bg-[#FEF7F2] dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
-    <div><p className="text-center text-5xl font-bold text-[#2B1B12] my-5 ">What People Say <br></br> About Dream Home</p></div>
+    <div className="h-[25rem]  rounded-md flex flex-col antialiased bg-[#FEF7F2] dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+    <div><p className="text-center sm:text-3xl text-5xl font-bold text-[#2B1B12] my-5 ">What People Say <br></br> About Dream Home</p></div>
 
       <InfiniteMovingCards
         items={testimonials}
